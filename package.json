@@ -1,0 +1,27 @@
+{
+  "name": "todo_challenge",
+  "version": "1.0.0",
+  "description": "To do list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DataMinerUK/todo_challenge.git"
+  },
+  "author": "Nicola Hughes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DataMinerUK/todo_challenge/issues"
+  },
+  "homepage": "https://github.com/DataMinerUK/todo_challenge#readme",
+  "devDependencies": {
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.3",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "phantomjs": "^1.9.17"
+  }
+}
