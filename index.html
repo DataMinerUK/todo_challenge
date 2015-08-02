@@ -25,14 +25,18 @@
         <div class="list-box">
           <ul ng-repeat="task in t.toDoList">
             <li>
-              <input type="checkbox" />
+              <input type="checkbox" ng-click="t.completeTask($index)" />
               <label>{{task}}</label>
               <a href="#" ng-click="t.removeTask($index)">&#10006;</a>
             </li>
           </ul>
         </div>
         <div class="items-left">
-          <p> items left</p>
+          <p><span id="tasks-left" ng-bind="t.tasksLeft()"></span><ng-pluralize count="t.tasksRemaining"
+                 when="{'0': ' tasks to do. Add tasks to the box above',
+                     '1': ' task still to do',
+                     'other': ' tasks still to do'}">
+</ng-pluralize></p>
         </div>
         <div class="filter-list">
           <ul>
