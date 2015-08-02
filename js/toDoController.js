@@ -9,24 +9,25 @@ toDo.controller('ToDoCtrl', [function() {
     // console.log(self.completed)
     // console.log(self.toDoList)
   }
-  self.removeTask = function(index) {
-    var taskInQuestion = self.toDoList[index]
+  self.removeTask = function(item) {
+    var index = self.toDoList.indexOf(item)
     self.toDoList.splice(index,1)
-    if (self.completed.indexOf(taskInQuestion) > -1) {
-      var index = self.completed.indexOf(taskInQuestion)
+    if (self.completed.indexOf(item) > -1) {
+      var index = self.completed.indexOf(item)
       self.completed.splice(index,1)
     }
     // console.log(self.completed)
     // console.log(self.toDoList)
   }
 
-  self.completeTask = function(index) {
-    var taskCompleted = self.toDoList[index]
-    if (self.completed.indexOf(taskCompleted) === -1) {
-      self.completed.push(taskCompleted)
+  self.completeTask = function(item) {
+    if (self.completed.indexOf(item) === -1) {
+      self.completed.push(item)
     }
-    // console.log(self.completed)
-    // console.log(self.toDoList)
+    else {
+      var index = self.completed.indexOf(item)
+      self.completed.splice(index,1)
+    }
   }
 
   self.tasksLeft = function() {

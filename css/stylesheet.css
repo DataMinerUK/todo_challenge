@@ -76,6 +76,10 @@
   outline: none;
 }
 
+.filter-list button#clear {
+  color: #535454 !important;
+}
+
 ul {
     list-style-type: none;
 }
