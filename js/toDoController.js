@@ -6,8 +6,8 @@ toDo.controller('ToDoCtrl', [function() {
   self.addTask = function() {
     self.toDoList.push(self.task)
     self.task = ''
-    console.log(self.completed)
-    console.log(self.toDoList)
+    // console.log(self.completed)
+    // console.log(self.toDoList)
   }
   self.removeTask = function(index) {
     var taskInQuestion = self.toDoList[index]
@@ -16,8 +16,8 @@ toDo.controller('ToDoCtrl', [function() {
       var index = self.completed.indexOf(taskInQuestion)
       self.completed.splice(index,1)
     }
-    console.log(self.completed)
-    console.log(self.toDoList)
+    // console.log(self.completed)
+    // console.log(self.toDoList)
   }
 
   self.completeTask = function(index) {
@@ -25,8 +25,8 @@ toDo.controller('ToDoCtrl', [function() {
     if (self.completed.indexOf(taskCompleted) === -1) {
       self.completed.push(taskCompleted)
     }
-    console.log(self.completed)
-    console.log(self.toDoList)
+    // console.log(self.completed)
+    // console.log(self.toDoList)
   }
 
   self.tasksLeft = function() {
@@ -41,9 +41,25 @@ toDo.controller('ToDoCtrl', [function() {
     self.completed = []
   }
 
-  self.list = function(list) {
-     list = typeof list !== 'undefined' ? list : self.toDoList
-     return list
+  self.filterComplete = function(item) {
+    if (self.completed.indexOf(item) > -1) {
+      return true
+    }
+    return false
+  }
+
+  self.filterActive = function(item) {
+    if (self.completed.indexOf(item) === -1) {
+      return true
+    }
+    return false
+  }
+
+  self.isCompleted = function(item) {
+    if (self.completed.indexOf(item) > -1) {
+      return true
+    }
+    return false
   }
 
 }]);
