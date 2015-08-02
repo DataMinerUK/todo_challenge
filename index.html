@@ -23,7 +23,7 @@
           </form>
         </div>
         <div class="list-box">
-          <ul ng-repeat="task in t.toDoList">
+          <ul ng-repeat="task in t.list()">
             <li>
               <input type="checkbox" ng-click="t.completeTask($index)" />
               <label>{{task}}</label>
@@ -33,17 +33,17 @@
         </div>
         <div class="items-left">
           <p><span id="tasks-left" ng-bind="t.tasksLeft()"></span><ng-pluralize count="t.tasksRemaining"
-                 when="{'0': ' tasks to do. Add tasks to the box above',
+                 when="{'0': ' tasks to do',
                      '1': ' task still to do',
                      'other': ' tasks still to do'}">
 </ng-pluralize></p>
         </div>
         <div class="filter-list">
           <ul>
-            <li><button><b>All</b></button></li>
+            <li><button ng-click="t.list(t.toDoList)"><b>All</b></button></li>
             <li><button>Active</button></li>
-            <li><button>Complete</button></li>
-            <li><button hidden>Clear completed</button></li>
+            <li><button ng-click="t.list(t.completed)">Complete</button></li>
+            <li ng-if="t.completed.length > 0"><button ng-click="t.removeCompleted()">Clear completed</button></li>
           </ul>
         </div>
      </div>

@@ -22,7 +22,9 @@ toDo.controller('ToDoCtrl', [function() {
 
   self.completeTask = function(index) {
     var taskCompleted = self.toDoList[index]
-    self.completed.push(taskCompleted)
+    if (self.completed.indexOf(taskCompleted) === -1) {
+      self.completed.push(taskCompleted)
+    }
     console.log(self.completed)
     console.log(self.toDoList)
   }
@@ -31,4 +33,17 @@ toDo.controller('ToDoCtrl', [function() {
     self.tasksRemaining = self.toDoList.length - self.completed.length
     return self.tasksRemaining
   }
+
+  self.removeCompleted = function() {
+    self.toDoList = self.toDoList.filter( function( el ) {
+      return self.completed.indexOf( el ) < 0;
+    });
+    self.completed = []
+  }
+
+  self.list = function(list) {
+     list = typeof list !== 'undefined' ? list : self.toDoList
+     return list
+  }
+
 }]);
