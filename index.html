@@ -25,7 +25,7 @@
         <div class="list-box">
           <ul ng-repeat="task in t.list()">
             <li>
-              <input type="checkbox" ng-click="t.completeTask($index)" />
+              <input type="radio" ng-click="t.completeTask($index)" />
               <label>{{task}}</label>
               <a href="#" ng-click="t.removeTask($index)">&#10006;</a>
             </li>
