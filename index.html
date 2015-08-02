@@ -41,10 +41,10 @@
         </div>
         <div class="filter-list">
           <ul>
-            <li><button ng-click="myFilter = undefined">All</button></li>
-            <li><button ng-click="myFilter = t.filterActive">Active</button></li>
-            <li><button ng-click="myFilter = t.filterComplete">Completed</button></li>
-            <li ng-if="t.completed.length > 0"><button id="clear" ng-click="t.removeCompleted()">Clear completed</button></li>
+            <li><input type="radio" id="radioAll" name="filter" checked/><label for="radioAll" ng-click="myFilter = undefined">All</label></li>
+            <li><input type="radio" id="radioActive" name="filter" /><label for="radioActive" ng-click="myFilter = t.filterActive">Active</label></li>
+            <li><input type="radio" id="radioComplete" name="filter" /><label for="radioComplete" ng-click="myFilter = t.filterComplete">Completed</label></li>
+            <li ng-if="t.completed.length > 0"><input type="radio" name="clearing" /><label for="clearing" id="clear" ng-click="t.removeCompleted()">Clear completed</label></li>
           </ul>
         </div>
      </div>

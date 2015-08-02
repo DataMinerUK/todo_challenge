@@ -68,15 +68,23 @@
   padding: 5px;
 }
 
-.filter-list button {
+.filter-list label {
   border-radius: 5px;
   color: #B34242 !important;
   background-color: #F5F5F5 !important;
+  padding: 5px 10px;
   margin-top: 10px;
   outline: none;
 }
+.filter-list input[type="radio"] {
+    display:none;
+}
 
-.filter-list button#clear {
+.filter-list input[type="radio"]:checked + label {
+  border: thin solid #B34242 !important;
+}
+
+.filter-list label#clear {
   color: #535454 !important;
 }
 
