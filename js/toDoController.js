@@ -4,6 +4,7 @@ toDo.controller('ToDoCtrl', [function() {
   self.completed = [];
   self.tasksRemaining = 0;
   self.addTask = function() {
+    if (self.toDoList.indexOf(self.task) > -1) { self.task += ' '}
     self.toDoList.push(self.task)
     self.task = ''
     // console.log(self.completed)
