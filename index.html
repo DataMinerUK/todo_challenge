@@ -32,11 +32,12 @@
           </ul>
         </div>
         <div class="items-left">
-          <p><span id="tasks-left" ng-bind="t.tasksLeft()"></span><ng-pluralize count="t.tasksRemaining"
+          <p><span id="tasks-left" ng-bind="t.tasksLeft()"></span>
+            <ng-pluralize count="t.tasksRemaining"
                  when="{'0': ' tasks to do',
                      '1': ' task still to do',
                      'other': ' tasks still to do'}">
-</ng-pluralize></p>
+            </ng-pluralize></p>
         </div>
         <div class="filter-list">
           <ul>
