@@ -49,3 +49,11 @@ So I never see them again
 * When passing in Angular type object to the controller there is no need for `{{}}`
 * `ng-repeat` does not allow for duplications
 * Use `var` name in the Angular scripts and the name passed into the `()` in `index.html`
+* An `element` is in an `array` if `array.indexOf(element) >-1`
+* An `element` is not in an `array` if `array.indexOf(element) === -1`
+* To delete an `element` from an `array` you get the index of the element and then splice the array on the index for one element
+```javascript
+var index = array.indexOf(element);
+array.splice(index, 1);
+```
+* You cannot delete an array from an array using `-`, that's `NaN`. You should do [it using a filter methos](https://github.com/DataMinerUK/todo_challenge/blob/master/js/toDoController.js#L40-L42) instead
