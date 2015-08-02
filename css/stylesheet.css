@@ -45,6 +45,11 @@
 
 .list-box input {
   font-size: 20px;
+  outline: none;
+}
+
+.list-box input:checked + label {
+  text-decoration: line-through;
 }
 
 .items-left {
