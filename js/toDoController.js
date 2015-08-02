@@ -3,5 +3,6 @@ toDo.controller('ToDoCtrl', [function() {
   self.toDoList = [];
   self.addTask = function() {
     self.toDoList.push(self.task)
+    self.task = ''
   }
 }]);

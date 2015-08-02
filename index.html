@@ -12,19 +12,18 @@
     <script src='js/toDoController.js'></script>
   </head>
 
-  <body ng-controller="ToDoCtrl">
+  <body ng-controller="ToDoCtrl as t">
     <div class="container">
       <h1>To Do</h1>
       <div class="info">
         <div class="input-box">
-          <form>
+          <form ng-submit="t.addTask()">
             <input type="text" placeholder="What needs to be done?"
-                   ng-model="ToDoCtrl.task" ng-change="ToDoCtrl.addTask()" />
-            <button ng-click="ToDoCtrl.addTask()">Add</button>
+                   ng-model="t.task" />
           </form>
         </div>
         <div class="list-box">
-          <ul ng-repeat="task in ToDoCtrl.toDoList">
+          <ul ng-repeat="task in t.toDoList">
             <li>
               <input type="checkbox" />
               <label>{{task}}</label>
