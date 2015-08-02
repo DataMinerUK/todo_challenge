@@ -5,4 +5,7 @@ toDo.controller('ToDoCtrl', [function() {
     self.toDoList.push(self.task)
     self.task = ''
   }
+  self.removeTask = function(index) {
+    self.toDoList.splice(index,1)
+  }
 }]);
