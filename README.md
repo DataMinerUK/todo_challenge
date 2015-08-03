@@ -43,6 +43,7 @@ So I never see them again
 
 ## Lessons Learnt
 
+* Should have wrapped tasks in an object (like `{ description: input, completed: false }`) and not used an array of strings
 * You need an `as` alias for your controller so as not to have to use `$scope` everywhere
 * Stackoverflow answers mostly have the `$scope` used
 * Leave styling conditions to CSS and not Angular
@@ -56,4 +57,4 @@ So I never see them again
 var index = array.indexOf(element);
 array.splice(index, 1);
 ```
-* You cannot delete an array from an array using `-`, that's `NaN`. You should do [it using a filter methos](https://github.com/DataMinerUK/todo_challenge/blob/master/js/toDoController.js#L40-L42) instead
+* You cannot delete an array from an array using `-`, that's `NaN`. You should do [it using a filter methods](https://github.com/DataMinerUK/todo_challenge/blob/master/js/toDoController.js#L40-L42) instead
