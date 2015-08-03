@@ -18,8 +18,7 @@
       <div class="info">
         <div class="input-box">
           <form ng-submit="t.addTask()">
-            <input type="text" placeholder="What needs to be done?"
-                   ng-model="t.task" />
+            <input type="text" placeholder="What needs to be done?" ng-model="t.task" />
           </form>
         </div>
         <div class="list-box">
@@ -34,17 +33,29 @@
         <div class="items-left">
           <p><span id="tasks-left" ng-bind="t.tasksLeft()"></span>
             <ng-pluralize count="t.tasksRemaining"
-                 when="{'0': ' tasks to do',
-                     '1': ' task still to do',
-                     'other': ' tasks still to do'}">
+                          when="{'0': ' tasks to do',
+                               '1': ' task still to do',
+                               'other': ' tasks still to do'}">
             </ng-pluralize></p>
         </div>
         <div class="filter-list">
           <ul>
-            <li><input type="radio" id="radioAll" name="filter" checked/><label for="radioAll" ng-click="myFilter = undefined">All</label></li>
-            <li><input type="radio" id="radioActive" name="filter" /><label for="radioActive" ng-click="myFilter = t.filterActive">Active</label></li>
-            <li><input type="radio" id="radioComplete" name="filter" /><label for="radioComplete" ng-click="myFilter = t.filterComplete">Completed</label></li>
-            <li ng-if="t.completed.length > 0"><input type="radio" name="clearing" /><label for="clearing" id="clear" ng-click="t.removeCompleted()">Clear completed</label></li>
+            <li>
+              <input type="radio" id="radioAll" name="filter" checked/>
+              <label for="radioAll" ng-click="myFilter = undefined">All</label>
+            </li>
+            <li>
+              <input type="radio" id="radioActive" name="filter" />
+              <label for="radioActive" ng-click="myFilter = t.filterActive">Active</label>
+            </li>
+            <li>
+              <input type="radio" id="radioComplete" name="filter" />
+              <label for="radioComplete" ng-click="myFilter = t.filterComplete">Completed</label>
+            </li>
+            <li ng-if="t.completed.length > 0">
+              <input type="radio" name="clearing" />
+              <label for="clearing" id="clear" ng-click="t.removeCompleted()">Clear completed</label>
+            </li>
           </ul>
         </div>
      </div>
